@@ -1,0 +1,131 @@
+    <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="grid.css">
+</head>
+<body>
+
+    <div class="Container">
+
+        <nav>
+                    <img alt="logo" src="immagini/logo_menu_large.png" />                
+            
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="gridAestetic.html">Aesthetic</a></li>
+                <li><a href="#">Altro</a></li>
+                <li><a href="#">Altro2</a></li>
+                <li style="font-size: 10px">
+                    <img alt="serach" src="immagini/zoom.png" style="height: 30px; width: auto;">
+                </li>
+                <li style="font-size: 10px">
+                    <img src="immagini/profile.png" style="height: 30px; width: auto;" alt="user">
+                </li>
+                <li style="font-size: 10px">
+                    <img src="immagini/saved-items.png" style="height: 30px; width: auto;" alt="preferiti">
+                </li>
+                
+            </ul>
+        </nav>
+        
+
+        <main>
+            <h1 style="background-image: url(immagini/sfondo2.0.jpg); background-size: cover; margin: 0px;">
+                <img src="immagini/immagine_titolo.png" style="width: 60%;">
+            </h1>
+
+            <h1>
+                <img src="immagini/decorazioni/italy.png" alt="nuvole" style="width: 90px; height: 90px; margin-bottom: -15px; vertical-align: baseline;">
+                Benvenuti <!--su Aest Me!-->
+                <img src="immagini/decorazioni/italy.png" alt="nuvole" style="width: 90px; height: 90px; margin-bottom: -15px; vertical-align: baseline;">
+            </h1>
+
+            <p>
+                Questa pagina serve a <strong>trovare gli stili e gli aesthetic che più ti piacciono</strong>, diverse idee su capi di abbigliamento
+                diversi o simili tra loro.
+                <!-- puoi trovare anche svariati passatempi, con le nostre playlist, le nostre Buckley lists e hobby occasionali.-->
+                Speriamo che troverai quello che cerchi, buon viaggio!<br>
+                Potete contribuire ed ampliare questa pagina  contattandoci sui nostri sociali <img class="icons" src="immagini/decorazioni/cute_smile.png" alt="">!
+            </p>
+
+
+
+            <h2>Stili in evidenza</h2>
+
+            <div class="flex_Box" id="carosello">
+               
+            </div>
+
+            <button onclick="document.location='gridAestetic.html'">Scopri di più...</button>
+        </main>
+
+        <footer>
+        
+            <section>
+                <p>
+                    Contatti<img class="icons" src="immagini/decorazioni/contact_img.png" alt="">
+                    <br />
+        
+                    Email: michele.folci04@gmail.com<br />
+                    cell: +39 3891939739
+                </p>
+                <p>
+                    <a href="#">
+                        <img class="icons" src="immagini/decorazioni/insta.png" alt="link social instagram">
+                    </a>
+                    <a href="#">
+                        <img class="icons" src="immagini/decorazioni/telegram.png" alt="link social telegram">
+                    </a>
+                    <a href="#">
+                        <img class="icons" src="immagini/decorazioni/discord.png" alt="link social discord" />
+                    </a>
+                </p>
+        
+            </section>
+        
+            <section>
+                <img alt="logo footer" src="immagini/logo_small.png" style="height: 160px; margin: 10px auto auto 10px;">
+            </section>
+        </footer>
+
+    <style type="text/css">
+        .Container {
+            grid-template-columns: auto;
+            grid-template-areas:
+                "header"                
+                "main"
+                "sec"
+                "footer";
+        }
+        .flex_Box {
+
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+        .item {
+            border: solid 2px black;
+            border-radius: 4%;
+            width: 400px;
+            height: 300px;
+            margin: 5px;
+            background-size: cover;
+        }
+        .item h3{
+            color: coral;
+        }
+        .item p {
+            background-color: lightGrey;
+        }
+        button {
+            margin-top: 10px;
+            
+        }
+    </style>  
+    
+    <script type="text/javascript" src="JavaScript.js"></script>
+ 
+</body>
+</html>
