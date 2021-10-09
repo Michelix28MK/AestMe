@@ -8,11 +8,6 @@
     }
 }
 
-
-
-
-
-
 let Alt = new stile("Alt", "immagini/alt.jpg", "L'alt (da alternativo) è uno aesthetic che mostra un abbigliamento sui toni scuri o del nero che è reso particolare dai dettagli alternativi quali calze, sclada muscoli, catenelle, (etc.) e dalla sovrapposizione di diversi stili.",
     ["Calze a rete", "Maglia a maniche lunghe", "gonna corta"]);
 
@@ -38,23 +33,7 @@ let Skater = new stile("Skater", "immagini/skater.jpg", "skater, conosciuto anch
 
 let Y2K = new stile("Y2K", "immagini/Y2K.jpeg", "Y2K è un aesthetich che era prevalente nella cultura popolare dagli anni dal 1995 al 2004,è una moda ritornata ed è caratterizzata da un distinto periodo stilistico, hardware design, molta musica hip-hop e pop, accessori luccicanti e il riutuilizzo delle vechie 'tecnologie'", ["minigonne: principalmente fatte in jeans si possono trovare anche in altri materiali.","Top: colorati e stravaganti con grafiche vintage.","Gioelli luccicanti","tute: colorate in velluto"]); //too check
 
-
-
-
-
-let listaStili = [Y2K, Alt, Artsy, Boujee, CottageCore, DarkAcademia, LightAcademia, Indie, Skater];
-
-
-
-
-
-
-
-
-
-
-
-
+let listaStili = [Alt, Artsy, Boujee, CottageCore, DarkAcademia, LightAcademia, Indie, Skater, Y2K];
 
 function creaSezioni(stile, _posizione) {
 
@@ -92,7 +71,6 @@ function creaSezioni(stile, _posizione) {
     }
         
 }
-
 function creaSidebar(item) {
 
     let parent = document.querySelector("aside");
@@ -117,7 +95,6 @@ function creaSidebar(item) {
         }
     }
 }
-
 function evidenza(item) {
 
     let parent = document.getElementById("carosello");
@@ -138,30 +115,6 @@ function evidenza(item) {
         continer.appendChild(descrizioane);
     }      
 }
-
-for (let item of listaStili) {
-    /*
-     * crea la lista degli stili in GridAestetic
-     * e la side bar delle pagine che ne necessitano.
-     * 
-     * il ciclo non da errori anche se uno o tutti
-     * gli elementi non sono presenti nella pagina
-     * */
-
-    creaSezioni(item, ".flex_list");
-    creaSidebar(item);
-}
-
-for (i = 0; i < 4; i++) {
-    /*
-     * Crea il carosello scegliendo degli elementi a caso tra gli stili
-     * presenti nella lista generale(qui sopra stante) in modo da mostrare
-     * sempre degli stili differenti ad ogni accesso alla homepage
-     * */
-    let random = listaStili[Math.floor(Math.random() * listaStili.length)];
-    evidenza(random);
-}
-
 function backword() {
     let luogo = document.getElementById("parente");
     luogo.innerHTML = "";
@@ -183,7 +136,6 @@ function backword() {
     for (let item of listaStili)
         creaSidebar(item);
 }
-
 function yondu(item) {
 
     let main = document.getElementById("parente");
@@ -226,6 +178,7 @@ function yondu(item) {
     /*Le righe successive servono a cancellare la barra laterale e
      * riscriverla secondo il metodo utile a yondu() --> manda alla
      * scheda degli altri stili senza dover passare dalla lista completa*/
+
     let chek = document.querySelector("aside");
     chek.innerHTML = "";
     let titoloSide = document.createElement("h2");
@@ -234,4 +187,74 @@ function yondu(item) {
 
     for (let item of listaStili)
         creaSidebar(item);
+}
+function userMenuGenerator(){
+    let log = document.querySelector("#log");
+    let settings=document.querySelector("#set");
+    let info=document.querySelector("#info");
+    let link= document.createElement("a");
+    let links= document.createElement("a");
+    let linki= document.createElement("a");
+    
+
+    if (isLogged) {
+        link.innerText="log out";
+       
+       link.href="";
+       log.appendChild(link);
+    }else{
+        link.innerText="log in";
+        log.appendChild(link);
+    }
+
+    links.innerText="settings";
+    links.href="";
+    settings.appendChild(links);
+
+    linki.innerText="info";
+    linki.href="";
+    info.appendChild(linki);
+}
+function hideShowUserMenu(){
+    let menu=document.querySelector("#userMenu");
+    menu.classList.toggle("hidden");
+    console.log("cambio");
+}
+for (let i=0; i<listaStili.length; i++){
+    for(let j=0; j<listaStili.length; j++){
+        if (listaStili[i].name<listaStili[j].name) {
+            let help= listaStili[i];
+            listaStili[i]=listaStili[j];
+            listaStili[j]=help;
+        }
+    }
+}
+console.log("sort completed!");
+
+let isLogged= false;
+userMenuGenerator();
+let trig = document.querySelector("#menuSet");
+trig.addEventListener('clik', hideShowUserMenu())
+
+for (let item of listaStili) {
+    /*
+     * crea la lista degli stili in GridAestetic
+     * e la side bar delle pagine che ne necessitano.
+     * 
+     * il ciclo non da errori anche se uno o tutti
+     * gli elementi non sono presenti nella pagina
+     * */
+
+    creaSezioni(item, ".flex_list");
+    creaSidebar(item);
+}
+
+for (i = 0; i < 4; i++) {
+    /*
+     * Crea il carosello scegliendo degli elementi a caso tra gli stili
+     * presenti nella lista generale(qui sopra stante) in modo da mostrare
+     * sempre degli stili differenti ad ogni accesso alla homepage
+     * */
+    let random = listaStili[Math.floor(Math.random() * listaStili.length)];
+    evidenza(random);
 }

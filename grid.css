@@ -25,12 +25,12 @@ nav {
     flex-wrap: wrap;
     border: solid 3px rgb(49, 172, 248);
     font-family: fantasy;
-    font-size: 20px;
+    font-size: xx-large;
     background-color: #9a7df1;
     /*background-color: #dddee5;*/
     text-align:center;
 }
- nav img {
+nav img {
      margin: 5px 5px 5px 25px;
      width: 285px;
         /*background-image: linear-gradient(to top left, red,orange,yellow,green,blue,indigo,violet);*/
@@ -38,14 +38,12 @@ nav {
 nav ul {
     margin: auto 0px auto auto;
     display:flex;
-    flex-direction:row;
     justify-content: center;
-    list-style-type: none;
-    font-family: fantasy;    
+    list-style-type: none;   
 }
 nav li{
     padding: 15px;
-    font-size: xx-large;
+    
 }
 nav a{
     color:#111010;
@@ -56,8 +54,8 @@ nav a:hover{
 }
 aside{
   grid-area: sidebar;
-  background-color: rgb(173, 114, 190);
-  border-radius: 10px;
+  background-color: rgb(201, 161, 212);
+  /*border-radius: 10px;*/
   position:fixed;
   height: 100vh;
   width: 345px;
@@ -79,30 +77,18 @@ aside a:hover{
 main {
     grid-area: main;
     background-color: #8ad4ebaf;
-   
     text-align: center;
 }
-
-.second {
-    grid-area: sec;
-    background-color: lightBlue;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-}
-
 h2 {
     border-top:solid;
     border-bottom:solid;
     padding:5px;
 }
-
 .icons {
     width: 30px;
     height: 30px;
     vertical-align: middle;
 }
-
 footer {
     display: flex;
     justify-content: space-around;
@@ -112,20 +98,18 @@ footer {
     padding: 3px;
     border: solid white 5px;
 }
-
 .flex_list{
   display: flex;
   justify-content: space-around;
   align-items: stretch;
   flex-wrap: wrap;
 }
-
 .aest_c{
-  text-align: left;
-  margin-left: 11px;
-  width: 580px;
+    text-align: left;
+    margin-left: 11px;
+    width: 580px;
+    
 }
-
 .aest_c img{
   height: 160px;
   width: 160px;
@@ -133,15 +117,13 @@ footer {
   border: solid 3px;
   vertical-align: middle;
 }
-
 .aest_c p{
   background-color: #dddee5;
 }
-
 .aest_c h3{
   background-color: #d0adef;
+  box-shadow: 10px 10px 5px rgba(85, 85, 85, 0.719);
 }
-
 button{
     font-size: 85%;
     font-family: serif;
@@ -150,8 +132,25 @@ button{
     padding: 10px;
     margin: 0px 0px 10px 10px;
 }
-
 button:hover{
     text-decoration: underline;
 }
+nav ul li #userMenu{
+    position: fixed;
+    right: 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background-color: honeydew;
+    font-size: 18px;
+    font-family:Arial, Helvetica, sans-serif;    
+}
+nav ul#userMenu li a:hover{
+    text-decoration: underline black;
 
+}
+.hidden {
+    /*position:absolute;
+    left:-9999px;*/
+   
+}
