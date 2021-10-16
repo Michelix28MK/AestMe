@@ -1,33 +1,34 @@
 ﻿class stile {
-    constructor(name, src, descrizione, componenti) {  //src=link immagine
+    constructor(name, src, descrizione, componenti, coloreTitolo) {  //src=link immagine
     
         this.name = name;
         this.src = src;
         this.descrizione = descrizione;
         this.componenti = componenti;
+        this.coloreTitolo= coloreTitolo;
     }
 }
 
 let Alt = new stile("Alt", "immagini/alt.jpg", "L'alt (da alternativo) è uno aesthetic che mostra un abbigliamento sui toni scuri o del nero che è reso particolare dai dettagli alternativi quali calze, sclada muscoli, catenelle, (etc.) e dalla sovrapposizione di diversi stili.",
-    ["Calze a rete", "Maglia a maniche lunghe", "gonna corta"]);
+    ["Calze a rete", "Maglia a maniche lunghe", "gonna corta"],"#000820");
 
 let Artsy = new stile("Artsy","immagini/Artsy.jpg", "L'Artsy è un aesthetic che riprende temi artistici come maglie e jeans decorati a mano con pittura o ricami, uno stile semplice e leggero.",
-    ["Mom jeans", "Vestiti personalizzati: ispirato alla natura", "Vestiti multicolore", "Scarpe Vans, Converse o vintage"]); //too check
+    ["Mom jeans", "Vestiti personalizzati: ispirato alla natura", "Vestiti multicolore", "Scarpe Vans, Converse o vintage"],"#ea6d30"); //too check
 
 let Boujee = new stile("Boujee", "immagini/classy.jpg", "Il Boujee è un aesthetic molto stravagante, chic, elegante e stiloso. É associato ad uno stile di vita altolocato, a comprare e indossare i vestiti o accessori degli ultimi trend.É caratterizzato da vestiti brillanti e da sera e gioielli sfarzosi.",
-    ["Abiti da sera", "Abiti in velluto","Abiti brillanti", "Abiti lunghi con spacchi", "Orecchini lunghi o diamantati", "Tacchi medio-alti"]);
+    ["Abiti da sera", "Abiti in velluto","Abiti brillanti", "Abiti lunghi con spacchi", "Orecchini lunghi o diamantati", "Tacchi medio-alti"], "#e1e0de");
 
 let CottageCore = new stile("CottageCore", "immagini/Cottagecore.jpg","Il Cottagecore è uno aestetic fashion che celebra e ricorda la vita rurale. Valorizza le capacità tradizionali e la nostalgica vita di campagna.",
-    ["a", "b"]);
+    ["a", "b"], "#5fb7ca");
 
 let DarkAcademia = new stile("DarkAcademia", "immagini/dark_Academia.jpg", "Il dark academia è uno aestetic che rappresenta uno stile accademico e scolastico con dei temi scuri ed autunnali come il nero ed il marrone.",
-    ["a", "b"]);
+    ["a", "b"], "#ba5139");
 
 let LightAcademia = new stile("LightAcademia", "immagini/light_academia.jpg", "Il dark academia è uno aestetic che rappresenta uno stile accademico e scolastico con dei temi chiari ed primaverili come il bianco o 'color panna' ed il marroncino.",
-    ["a", "b"]);
+    ["a", "b"], "#002D2D");
 
 let Indie = new stile("Indie", "immagini/indie.jpg", "L'alt (da alternativo - 'alternativ') è uno aestetic che mostra un abbigliamento sui toni scuri o del nero che è reso particolare dai dettagli alternativi quali calze, sclada muscoli, catenelle, (etc.) e dalla sovrapposizione di diversi stili.",
-    ["a", "b"]);
+    ["a", "b"], "#");
 
 let Skater = new stile("Skater", "immagini/skater.jpg", "skater, conosciuto anche come skatercore, è un aesthetic centrato sulla cultura dello skate, dove le persone indossano vestiti larghi e comodi con grafiche vintage o di musica elettronica, pop e hip-hop.",["Marchio Vans", "Baggy jeans", "Magliette larghe", "Scarpe a suola piatta", "Cappello da pescatore o da baseball"]); //too check
 
@@ -106,6 +107,7 @@ function evidenza(item) {
         continer.classList.add("item");
         let titolo = document.createElement("h3");
         titolo.innerText = item.name;
+        titolo.style.color=item.coloreTitolo;
         let descrizioane = document.createElement("p");
         descrizioane.innerText = item.descrizione;
         /*Crea carosello di 1 stili da mettere*/
@@ -198,10 +200,10 @@ function userMenuGenerator(){
     
 
     if (isLogged) {
+
         link.innerText="log out";
-       
-       link.href="";
-       log.appendChild(link);
+        link.href="";
+        log.appendChild(link);
     }else{
         link.innerText="log in";
         log.appendChild(link);
