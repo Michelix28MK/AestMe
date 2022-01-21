@@ -6,6 +6,8 @@ body{
   font-size: larger;
   margin:0px;
   color: black;
+  display: grid;
+  grid: [stack] 1fr/[stack] 1fr;
 }
 
 .Container {
